@@ -33,10 +33,10 @@ jobs:
           # 生成变更记录
           if [ -z "$PREV_TAG" ]; then
             # 首次发布
-            printf "changelog=## 🎉 首次发布\n\n这是 瞬剪 Instant Cut 的首个正式版本。\n\n详细功能说明请查看 [FIRST_RELEASE_TEMPLATE.md](https://github.com/${{ github.repository }}/blob/main/FIRST_RELEASE_TEMPLATE.md)\n" >> $GITHUB_OUTPUT
+            printf "changelog=🎉 首次发布：瞬剪 Instant Cut 首个正式版本。详细功能说明请查看 FIRST_RELEASE_TEMPLATE.md" >> $GITHUB_OUTPUT
           else
             # 后续版本
-            printf "changelog=## 📝 更新内容\n\n查看 [${PREV_TAG}...${CURRENT_TAG}](https://github.com/${{ github.repository }}/compare/${PREV_TAG}...${CURRENT_TAG}) 的详细提交记录。\n" >> $GITHUB_OUTPUT
+            printf "changelog=📝 更新内容：查看 ${PREV_TAG}...${CURRENT_TAG} 的详细提交记录" >> $GITHUB_OUTPUT
           fi
 
   # 构建各个平台的可执行文件
