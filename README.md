@@ -85,11 +85,11 @@ sudo yum install ffmpeg
 
 ### 方式一：下载预编译的可执行文件（推荐）
 
-1. 前往 [Releases](https://github.com/heshunme/fast-video-cutter/releases) 页面
+1. 前往 [Releases](https://github.com/heshunme/instant-cut/releases) 页面
 2. 下载适合您操作系统的可执行文件：
-   - Windows: `fast-video-cutter.exe`
-   - macOS: `fast-video-cutter`
-   - Linux: `fast-video-cutter`
+   - Windows: `instant-cut.exe`
+   - macOS: `instant-cut`
+   - Linux: `instant-cut`
 3. 直接运行可执行文件（无需安装）
 4. 确保 FFmpeg 已安装在系统中（见上述安装要求）
 
@@ -138,8 +138,8 @@ sudo yum install ffmpeg
 
 1. **克隆仓库**
    ```bash
-   git clone https://github.com/heshunme/fast-video-cutter.git
-   cd fast-video-cutter
+   git clone https://github.com/heshunme/instant-cut.git
+   cd instant-cut
    ```
 
 2. **安装前端依赖**
@@ -159,9 +159,9 @@ sudo yum install ffmpeg
    ```
 
    构建完成后，可执行文件将位于：
-   - Windows: `src-tauri/target/release/fast-video-cutter.exe`
-   - macOS: `src-tauri/target/release/fast-video-cutter`
-   - Linux: `src-tauri/target/release/fast-video-cutter`
+   - Windows: `src-tauri/target/release/instant-cut.exe`
+   - macOS: `src-tauri/target/release/instant-cut`
+   - Linux: `src-tauri/target/release/instant-cut`
 
    > **注意**：本项目已禁用打包功能（bundle），因此只会生成单个可执行文件，不会创建安装包。
 
@@ -171,7 +171,7 @@ sudo yum install ffmpeg
 ### 项目结构
 
 ```
-fast-video-cutter/
+instant-cut/
 ├── src/                   # Vue 前端源码
 │   ├── components/        # Vue 组件
 │   ├── composables/       # Vue 组合函数
@@ -285,8 +285,8 @@ winget install Gyan.FFmpeg
 **问：构建后没有找到可执行文件？**
 
 答：可执行文件位于：
-- Windows: `src-tauri/target/release/fast-video-cutter.exe`
-- macOS/Linux: `src-tauri/target/release/fast-video-cutter`
+- Windows: `src-tauri/target/release/instant-cut.exe`
+- macOS/Linux: `src-tauri/target/release/instant-cut`
 
 确保构建没有错误输出，文件应该会自动生成。
 
@@ -295,15 +295,15 @@ winget install Gyan.FFmpeg
 如果您遇到问题或有建议，请：
 
 1. 查看 [常见问题](#常见问题) 部分
-2. 搜索 [Issues](https://github.com/heshunme/fast-video-cutter/issues) 页面
+2. 搜索 [Issues](https://github.com/heshunme/instant-cut/issues) 页面
 3. 创建新的 Issue 描述您的问题
-4. 参与 [Discussions](https://github.com/heshunme/fast-video-cutter/discussions) 讨论
+4. 参与 [Discussions](https://github.com/heshunme/instant-cut/discussions) 讨论
 
 ---
 
 <div align="center">
 
-**[⬆ 回到顶部](#fast-video-cutter)**
+**[⬆ 回到顶部](#instant-cut)**
 
 Made with ❤️ by [heshunme](https://github.com/heshunme)
 

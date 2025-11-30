@@ -32,12 +32,12 @@ jobs:
 
           # 判断是否为首次发布
           if [ -z "$PREV_TAG" ]; then
-            echo "is-first-release=true" >> $GITHUB_OUTPUT
-            echo "changelog=## 🎉 首次发布\n\n这是 Fast Video Cutter 的首个正式版本。\n\n### ✨ 主要特性\n- 🚀 极速无重编码视频剪辑\n- 📁 智能版本管理系统\n- 🎨 极简黑白 UI 设计\n- 💬 支持备注功能\n- 🔄 实时视频预览\n- ✅ 磁盘空间安全检查\n\n### 📋 系统要求\n- Windows/macOS/Linux 操作系统\n- 已安装 [FFmpeg](https://ffmpeg.org/) 和 FFprobe\n\n### 🚀 使用方法\n下载对应平台的可执行文件，直接运行即可。" >> $GITHUB_OUTPUT
+            printf "is-first-release=true\n" >> $GITHUB_OUTPUT
+            printf "changelog=## 🎉 首次发布\n\n这是 Fast Video Cutter 的首个正式版本。\n\n### ✨ 主要特性\n- 🚀 极速无重编码视频剪辑\n- 📁 智能版本管理系统\n- 🎨 极简黑白 UI 设计\n- 💬 支持备注功能\n- 🔄 实时视频预览\n- ✅ 磁盘空间安全检查\n\n### 📋 系统要求\n- Windows/macOS/Linux 操作系统\n- 已安装 [FFmpeg](https://ffmpeg.org/) 和 FFprobe\n\n### 🚀 使用方法\n下载对应平台的可执行文件，直接运行即可。\n" >> $GITHUB_OUTPUT
           else
-            echo "is-first-release=false" >> $GITHUB_OUTPUT
+            printf "is-first-release=false\n" >> $GITHUB_OUTPUT
             # 生成包含版本间 commit 链接的更新内容
-            echo "changelog=## 📝 更新内容\n\n### 🔗 变更记录\n\n查看 [${PREV_TAG}...${CURRENT_TAG}](https://github.com/${{ github.repository }}/compare/${PREV_TAG}...${CURRENT_TAG}) 的详细提交记录。\n\n### 📋 系统要求\n- Windows/macOS/Linux 操作系统\n- 已安装 [FFmpeg](https://ffmpeg.org/) 和 FFprobe\n\n### 🚀 使用方法\n下载对应平台的可执行文件，直接运行即可。" >> $GITHUB_OUTPUT
+            printf "changelog=## 📝 更新内容\n\n### 🔗 变更记录\n\n查看 [${PREV_TAG}...${CURRENT_TAG}](https://github.com/${{ github.repository }}/compare/${PREV_TAG}...${CURRENT_TAG}) 的详细提交记录。\n\n### 📋 系统要求\n- Windows/macOS/Linux 操作系统\n- 已安装 [FFmpeg](https://ffmpeg.org/) 和 FFprobe\n\n### 🚀 使用方法\n下载对应平台的可执行文件，直接运行即可。\n" >> $GITHUB_OUTPUT
           fi
 
   # 构建各个平台的可执行文件
@@ -49,20 +49,20 @@ jobs:
         include:
           - os: windows-latest
             target: x86_64-pc-windows-msvc
-            artifact_name: fast-video-cutter.exe
-            asset_name: fast-video-cutter-windows-x64.exe
+            artifact_name: instant-cut.exe
+            asset_name: instant-cut-windows-x64.exe
           - os: macos-latest
             target: x86_64-apple-darwin
-            artifact_name: fast-video-cutter
-            asset_name: fast-video-cutter-macos-x64
+            artifact_name: instant-cut
+            asset_name: instant-cut-macos-x64
           - os: macos-latest
             target: aarch64-apple-darwin
-            artifact_name: fast-video-cutter
-            asset_name: fast-video-cutter-macos-aarch64
+            artifact_name: instant-cut
+            asset_name: instant-cut-macos-aarch64
           - os: ubuntu-latest
             target: x86_64-unknown-linux-gnu
-            artifact_name: fast-video-cutter
-            asset_name: fast-video-cutter-linux-x64
+            artifact_name: instant-cut
+            asset_name: instant-cut-linux-x64
 
     runs-on: ${{ matrix.os }}
 
@@ -195,8 +195,8 @@ jobs:
         uses: geekyeggo/delete-artifact@v5
         with:
           name: |
-            fast-video-cutter-windows-x64.exe
-            fast-video-cutter-macos-x64
-            fast-video-cutter-macos-aarch64
-            fast-video-cutter-linux-x64
+            instant-cut-windows-x64.exe
+            instant-cut-macos-x64
+            instant-cut-macos-aarch64
+            instant-cut-linux-x64
           failOnError: false
