@@ -11,7 +11,7 @@
 
 </div>
 
-## 📋 功能特性
+## 功能特性
 
 - 🚀 **极速剪辑**：使用 FFmpeg 进行无重编码剪辑，速度极快
 - 📁 **智能版本管理**：自动版本化文件命名，避免覆盖原始文件
@@ -20,7 +20,7 @@
 - 🔄 **实时预览**：内置视频播放器，支持跳转到指定时间点
 - ✅ **安全检查**：自动检查磁盘空间，防止剪辑失败
 
-## ⚠️ 安装要求
+## 安装要求
 
 ### **重要前提条件**
 
@@ -81,7 +81,7 @@ sudo yum install ffmpeg
   sudo apt-get install -y pkg-config build-essential libclang-dev libwebkit2gtk-4.1-dev libssl-dev libayatana-appindicator3-dev libglib2.0-dev libgtk-3-dev librsvg2-dev libsoup-3.0-dev libjavascriptcoregtk-4.1-dev
   ```
 
-## 🚀 快速开始
+## 快速开始
 
 ### 方式一：下载预编译的可执行文件（推荐）
 
@@ -97,7 +97,7 @@ sudo yum install ffmpeg
 
 详细编译步骤请参考 [本地编译指南](#本地编译) 部分。
 
-## 📖 使用说明
+## 使用说明
 
 ### 基本操作流程
 
@@ -130,7 +130,7 @@ sudo yum install ffmpeg
 - 基于剪辑文件再剪辑：`video_1_1.mp4`
 - 带备注的剪辑：`video_1_highlight.mp4`
 
-## 🔧 本地编译
+## 本地编译
 
 > **📌 重要：本地编译前请确保已安装 Node.js 18+ 和 Rust 1.70+**
 
@@ -166,7 +166,7 @@ sudo yum install ffmpeg
    > **注意**：本项目已禁用打包功能（bundle），因此只会生成单个可执行文件，不会创建安装包。
 
 
-## 🛠️ 开发指南
+## 开发指南
 
 ### 项目结构
 
@@ -220,7 +220,7 @@ npm run tauri build
 4. 推送到分支 (`git push origin feature/AmazingFeature`)
 5. 开启 Pull Request
 
-## 🤝 技术栈
+## 技术栈
 
 - **前端框架**: Vue 3 + TypeScript
 - **构建工具**: Vite
@@ -229,24 +229,24 @@ npm run tauri build
 - **视频处理**: FFmpeg + FFprobe
 - **UI 风格**: 原生 CSS (黑白极简设计)
 
-## ⚡ 性能特点
+## 性能特点
 
 - **无重编码剪辑**: 使用流复制技术，速度比重编码剪辑快 10-100 倍
 - **低内存占用**: 不需要加载整个视频到内存
 - **智能缓存**: 自动检测磁盘空间，避免剪辑失败
 - **跨平台兼容**: Windows、macOS、Linux 全平台支持
 
-## 📄 许可证
+## 许可证
 
 本项目采用 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情。
 
-## 🙏 致谢
+## 致谢
 
 - [FFmpeg](https://ffmpeg.org/) - 强大的多媒体处理框架
 - [Tauri](https://tauri.app/) - 现代化的桌面应用开发框架
 - [Vue.js](https://vuejs.org/) - 渐进式 JavaScript 框架
 
-## ❓ 常见问题
+## 常见问题
 
 ### Ubuntu/Linux 构建问题
 
@@ -290,7 +290,7 @@ winget install Gyan.FFmpeg
 
 确保构建没有错误输出，文件应该会自动生成。
 
-## 📞 支持
+## 支持
 
 如果您遇到问题或有建议，请：
 
@@ -303,7 +303,7 @@ winget install Gyan.FFmpeg
 
 <div align="center">
 
-**[⬆ 回到顶部](#instant-cut)**
+**[⬆ 回到顶部](#)**
 
 Made with ❤️ by [heshunme](https://github.com/heshunme)
 
