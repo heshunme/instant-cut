@@ -33,7 +33,7 @@ jobs:
           # 判断是否为首次发布
           if [ -z "$PREV_TAG" ]; then
             printf "is-first-release=true\n" >> $GITHUB_OUTPUT
-            printf "changelog=## 🎉 首次发布\n\n这是 Fast Video Cutter 的首个正式版本。\n\n### ✨ 主要特性\n- 🚀 极速无重编码视频剪辑\n- 📁 智能版本管理系统\n- 🎨 极简黑白 UI 设计\n- 💬 支持备注功能\n- 🔄 实时视频预览\n- ✅ 磁盘空间安全检查\n\n### 📋 系统要求\n- Windows/macOS/Linux 操作系统\n- 已安装 [FFmpeg](https://ffmpeg.org/) 和 FFprobe\n\n### 🚀 使用方法\n下载对应平台的可执行文件，直接运行即可。\n" >> $GITHUB_OUTPUT
+            printf "changelog=## 🎉 首次发布\n\n这是 瞬剪 Instant Cut 的首个正式版本。\n\n### ✨ 主要特性\n- 🚀 极速无重编码视频剪辑\n- 📁 智能版本管理系统\n- 🎨 极简黑白 UI 设计\n- 💬 支持备注功能\n- 🔄 实时视频预览\n- ✅ 磁盘空间安全检查\n\n### 📋 系统要求\n- Windows/macOS/Linux 操作系统\n- 已安装 [FFmpeg](https://ffmpeg.org/) 和 FFprobe\n\n### 🚀 使用方法\n下载对应平台的可执行文件，直接运行即可。\n" >> $GITHUB_OUTPUT
           else
             printf "is-first-release=false\n" >> $GITHUB_OUTPUT
             # 生成包含版本间 commit 链接的更新内容

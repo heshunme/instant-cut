@@ -1,4 +1,4 @@
-# Fast Video Cutter
+# 瞬剪 Instant Cut
 
 <div align="center">
 

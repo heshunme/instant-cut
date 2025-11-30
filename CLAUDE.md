@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## 项目概述
 
-Fast Video Cutter 是一个极简的本地视频剪辑工具，基于 Tauri + Vue 3 构建。本质上是为 ffmpeg 提供了一个 GUI 壳，用于高度定制化的快速视频剪辑流程。使用黑白极简 UI 风格。
+瞬剪 (Instant Cut) 是一个极简的本地视频剪辑工具，基于 Tauri + Vue 3 构建。本质上是为 ffmpeg 提供了一个 GUI 壳，用于高度定制化的快速视频剪辑流程。使用黑白极简 UI 风格。
 
 **核心特性**：使用 ffmpeg 的 `-c copy` 参数进行无重编码剪辑，速度快但精度受限于关键帧。
 **版本控制系统**：支持版本化文件命名（如 `video_1.mp4`, `video_1_2.mp4`），自动递增版本号。
