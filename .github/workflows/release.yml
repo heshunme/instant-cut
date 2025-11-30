@@ -34,33 +34,37 @@ jobs:
           if [ -z "$PREV_TAG" ]; then
             printf "is-first-release=true\n" >> $GITHUB_OUTPUT
             {
-              printf "changelog=## 🎉 首次发布\n\n"
+              printf "changelog<<EOF\n"
+              printf "## 🎉 首次发布\n\n"
               printf "这是 瞬剪 Instant Cut 的首个正式版本。\n\n"
               printf "### ✨ 主要特性\n"
-              printf "%s- 🚀 极速无重编码视频剪辑\n" ""
-              printf "%s- 📁 智能版本管理系统\n" ""
-              printf "%s- 🎨 极简黑白 UI 设计\n" ""
-              printf "%s- 💬 支持备注功能\n" ""
-              printf "%s- 🔄 实时视频预览\n" ""
-              printf "%s- ✅ 磁盘空间安全检查\n\n" ""
+              printf "- 🚀 极速无重编码视频剪辑\n"
+              printf "- 📁 智能版本管理系统\n"
+              printf "- 🎨 极简黑白 UI 设计\n"
+              printf "- 💬 支持备注功能\n"
+              printf "- 🔄 实时视频预览\n"
+              printf "- ✅ 磁盘空间安全检查\n\n"
               printf "### 📋 系统要求\n"
-              printf "%s- Windows/macOS/Linux 操作系统\n" ""
-              printf "%s- 已安装 [FFmpeg](https://ffmpeg.org/) 和 FFprobe\n\n" ""
+              printf "- Windows/macOS/Linux 操作系统\n"
+              printf "- 已安装 [FFmpeg](https://ffmpeg.org/) 和 FFprobe\n\n"
               printf "### 🚀 使用方法\n"
               printf "下载对应平台的可执行文件，直接运行即可。\n"
+              printf "EOF\n"
             } >> $GITHUB_OUTPUT
           else
             printf "is-first-release=false\n" >> $GITHUB_OUTPUT
             # 生成包含版本间 commit 链接的更新内容
             {
-              printf "changelog=## 📝 更新内容\n\n"
+              printf "changelog<<EOF\n"
+              printf "## 📝 更新内容\n\n"
               printf "### 🔗 变更记录\n\n"
               printf "查看 [${PREV_TAG}...${CURRENT_TAG}](https://github.com/${{ github.repository }}/compare/${PREV_TAG}...${CURRENT_TAG}) 的详细提交记录。\n\n"
               printf "### 📋 系统要求\n"
-              printf "%s- Windows/macOS/Linux 操作系统\n" ""
-              printf "%s- 已安装 [FFmpeg](https://ffmpeg.org/) 和 FFprobe\n\n" ""
+              printf "- Windows/macOS/Linux 操作系统\n"
+              printf "- 已安装 [FFmpeg](https://ffmpeg.org/) 和 FFprobe\n\n"
               printf "### 🚀 使用方法\n"
               printf "下载对应平台的可执行文件，直接运行即可。\n"
+              printf "EOF\n"
             } >> $GITHUB_OUTPUT
           fi
 
