@@ -1,6 +1,6 @@
 {
   "name": "fast-video-cutter",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A minimalist video cutting tool",
   "type": "module",
   "scripts": {

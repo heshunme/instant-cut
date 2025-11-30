@@ -96,9 +96,24 @@ jobs:
             ${{ runner.os }}-cargo-${{ matrix.target }}-
             ${{ runner.os }}-cargo-
 
+      # 缓存系统依赖（Ubuntu）
+      - name: Cache system dependencies (Ubuntu)
+        if: matrix.os == 'ubuntu-latest'
+        uses: actions/cache@v4
+        with:
+          path: /var/cache/apt
+          key: ${{ runner.os }}-apt-${{ hashFiles('.github/workflows/release.yml') }}
+
       # 安装依赖
       - name: Install dependencies
         run: npm ci
+
+      # 安装系统依赖（仅 Ubuntu）
+      - name: Install system dependencies (Ubuntu)
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libglib2.0-dev libgtk-3-dev libayatana-appindicator3-dev librsvg2-dev
 
       # 构建 Tauri 应用
       - name: Build Tauri app
