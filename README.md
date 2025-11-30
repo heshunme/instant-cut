@@ -75,6 +75,11 @@ sudo yum install ffmpeg
 **对于开发者（本地编译）：**
 - **Node.js** 18.0 或更高版本
 - **Rust** 1.70 或更高版本
+- **Ubuntu/Linux 额外要求**：
+  ```bash
+  sudo apt-get update
+  sudo apt-get install -y pkg-config build-essential libclang-dev libwebkit2gtk-4.1-dev libssl-dev libayatana-appindicator3-dev libglib2.0-dev libgtk-3-dev librsvg2-dev libsoup-3.0-dev libjavascriptcoregtk-4.1-dev
+  ```
 
 ## 🚀 快速开始
 
@@ -240,6 +245,50 @@ npm run tauri build
 - [FFmpeg](https://ffmpeg.org/) - 强大的多媒体处理框架
 - [Tauri](https://tauri.app/) - 现代化的桌面应用开发框架
 - [Vue.js](https://vuejs.org/) - 渐进式 JavaScript 框架
+
+## ❓ 常见问题
+
+### Ubuntu/Linux 构建问题
+
+**问：在 Ubuntu 上编译时遇到系统库缺失错误？**
+
+答：Tauri 在 Linux 上需要一些系统库。请先安装以下依赖：
+
+```bash
+sudo apt-get update
+sudo apt-get install -y pkg-config build-essential libclang-dev libwebkit2gtk-4.1-dev libssl-dev libayatana-appindicator3-dev libglib2.0-dev libgtk-3-dev librsvg2-dev libsoup-3.0-dev libjavascriptcoregtk-4.1-dev
+```
+
+### FFmpeg 相关问题
+
+**问：应用提示"FFmpeg 未安装"？**
+
+答：请确保 FFmpeg 和 FFprobe 已正确安装并在 PATH 中可用：
+
+```bash
+# 验证安装
+ffmpeg -version
+ffprobe -version
+
+# Ubuntu/Debian 安装
+sudo apt-get install ffmpeg
+
+# macOS 安装
+brew install ffmpeg
+
+# Windows 安装
+winget install Gyan.FFmpeg
+```
+
+### 构建产物问题
+
+**问：构建后没有找到可执行文件？**
+
+答：可执行文件位于：
+- Windows: `src-tauri/target/release/fast-video-cutter.exe`
+- macOS/Linux: `src-tauri/target/release/fast-video-cutter`
+
+确保构建没有错误输出，文件应该会自动生成。
 
 ## 📞 支持
 
